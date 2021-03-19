@@ -39,6 +39,7 @@ extension Recorder {
         let fileManager = FileManager.default
         guard fileManager.createFile(atPath: recordingPath, contents: nil, attributes: nil) == true,
             let file = FileHandle(forWritingAtPath: recordingPath) else {
+            print("Vinyl could not write to: \(recordingPath)")
             return
         }
         
